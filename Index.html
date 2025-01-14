@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة المخازن - برهان السنمي</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- شاشة تسجيل الدخول -->
+    <div id="login-screen">
+        <h2>تسجيل الدخول</h2>
+        <input type="text" id="username" placeholder="اسم المستخدم" required>
+        <input type="password" id="password" placeholder="كلمة المرور" required>
+        <button onclick="login()">تسجيل الدخول</button>
+        <p id="login-error" style="color:red;"></p>
+    </div>
+
+    <!-- شاشة التطبيق الرئيسية بعد تسجيل الدخول -->
+    <div id="main-screen" style="display:none;">
+        <h2>إدارة المخازن - برهان السنمي</h2>
+        
+        <!-- قسم الأصناف -->
+        <h3>إضافة صنف</h3>
+        <input type="text" id="itemType" placeholder="اسم النوع">
+        <button onclick="saveItem()">إضافة صنف</button>
+        <table id="itemsTable">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>اسم النوع</th>
+                    <th>الإجراءات</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <!-- قسم الفواتير -->
+        <h3>إضافة فاتورة</h3>
+        <input type="text" id="invoiceItem" placeholder="اسم المنتج">
+        <input type="number" id="invoiceQuantity" placeholder="الكمية">
+        <input type="number" id="invoicePrice" placeholder="السعر">
+        <input type="number" id="invoiceTotal" placeholder="الإجمالي" readonly>
+        <button onclick="saveInvoice()">إضافة فاتورة</button>
+        <table id="invoiceList">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>اسم المنتج</th>
+                    <th>الكمية</th>
+                    <th>السعر</th>
+                    <th>الإجمالي</th>
+                    <th>الإجراءات</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <!-- زر الطباعة -->
+        <button onclick="printData()">طباعة</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
